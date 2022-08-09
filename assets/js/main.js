@@ -71,7 +71,7 @@ async function getFormData(){
     let data = {name: formName, email:formEmail, message:formMsg};
     console.log(data)
 
-    fetch("http://localhost:5000/form", {
+    fetch("https://git.heroku.com/my-app-portfolio-website.git/form", {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify(data)
