@@ -46,7 +46,7 @@ const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
     duration: 2000,
-    delay: 200,
+    delay: 200, 
 //     reset: true
 });
 
@@ -59,6 +59,7 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 async function getFormData(){
     console.log("Submitted")
     // console.log(document.getElementsByClassName(contact__input))
+    var frm = document.getElementsByName('contact-form')[0]
     let formArray=document.querySelectorAll('.contact__input')
     let formName=formArray[0].value
     let formEmail=formArray[1].value
@@ -66,11 +67,11 @@ async function getFormData(){
     console.log(formName)
     console.log(formEmail)
     console.log(formMsg)
-    alert("The form was submitted");
+    alert("Message sent successfully");
 
     let data = {name: formName, email:formEmail, message:formMsg};
     console.log(data)
-
+    frm.reset();
     fetch("https://my-app-portfolio-website.herokuapp.com/form", {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
