@@ -59,7 +59,7 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 async function getFormData(){
     console.log("Submitted")
     // console.log(document.getElementsByClassName(contact__input))
-    var frm = document.getElementsByName('contact-form')[0]
+    var frm = document.getElementById('contact-form')[0]
     let formArray=document.querySelectorAll('.contact__input')
     let formName=formArray[0].value
     let formEmail=formArray[1].value
