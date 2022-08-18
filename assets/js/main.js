@@ -58,20 +58,18 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 
 async function getFormData(){
     console.log("Submitted")
-    // console.log(document.getElementsByClassName(contact__input))
     var frm = document.getElementById('contact-form')[0]
     let formArray=document.querySelectorAll('.contact__input')
     let formName=formArray[0].value
     let formEmail=formArray[1].value
     let formMsg=formArray[2].value
-    console.log(formName)
-    console.log(formEmail)
-    console.log(formMsg)
+//     console.log(formName)
+//     console.log(formEmail)
+//     console.log(formMsg)
     alert("Message sent successfully");
 
     let data = {name: formName, email:formEmail, message:formMsg};
     console.log(data)
-    frm.reset();
     fetch("https://my-app-portfolio-website.herokuapp.com/form", {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
@@ -79,4 +77,8 @@ async function getFormData(){
     }).then(res => {
       console.log("Request complete! response:", res);
     });
+    
+    var frm = document.getElementById("contact-form")
+    frm.reset()
+    
 }
